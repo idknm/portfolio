@@ -1,8 +1,9 @@
-/*!
+/*
 Theme Name: habakiri
 Theme URI: http://habakiri.2inc.org/en/
 Author: inc2734
 Author URI: http://2inc.org
+Template: habakiri
 Description: Habakiri is the simple theme based on Bootstrap 3. This theme's goal is to create a responsive, bootstrap based WordPress theme quickly. The design is very simple, easy to create of child theme. Features are, 100% responsive layouts, the Glyphicons, Genericons, Font Awesome icons, 7 page templates, 8 header design patterns, many color settings, a lot of hooks, related posts, minified CSS and JavaScript, Sass and PHP Class in functions.php.
 Version: 2.5.2
 Text Domain: habakiri
@@ -12,11 +13,22 @@ Tags: white, fixed-layout, fluid-layout, responsive-layout, one-column, two-colu
 */
 
 .habakiri-slider__item-content {
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN','メイリオ', 'Meiryo','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
     font-weight: bold;
-    letter-spacing: 0.2em; }
+    letter-spacing: 0.2em;
+}
 
-.slider-message-1, .slider-message-2, .slider-message-3,{
+
+.site-description {
+    font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN','メイリオ', 'Meiryo','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+    font-size: 20px;
+    margin-left: 140px;
+}
+
+
+.slider-message-1, .slider-message-2, .slider-message-3 {
+    display: inline-block;
+    padding: 0 30 0 30;
     background-color: rgba(0,0,0,0.5);
 }
