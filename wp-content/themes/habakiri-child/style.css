@@ -1,34 +1,190 @@
 /*
-Theme Name: habakiri
-Theme URI: http://habakiri.2inc.org/en/
-Author: inc2734
-Author URI: http://2inc.org
-Template: habakiri
-Description: Habakiri is the simple theme based on Bootstrap 3. This theme's goal is to create a responsive, bootstrap based WordPress theme quickly. The design is very simple, easy to create of child theme. Features are, 100% responsive layouts, the Glyphicons, Genericons, Font Awesome icons, 7 page templates, 8 header design patterns, many color settings, a lot of hooks, related posts, minified CSS and JavaScript, Sass and PHP Class in functions.php.
+Theme Name: habakiri-child
+Theme URI: http://2inc.org ( テーマのURL )
+Description: Habakiri の子テーマです ( テーマの説明 )
+Author: Takashi Kitajima ( 作者名 )
+Author URI: http://2inc.org ( 作者のURL )
 Version: 2.5.2
-Text Domain: habakiri
-License: GPLv2 or later
-License URI: license.txt
-Tags: white, fixed-layout, fluid-layout, responsive-layout, one-column, two-columns, left-sidebar, right-sidebar, editor-style, sticky-post, microformats, featured-images, custom-colors, custom-menu, custom-background, custom-colors
+License: GNU General Public License
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Template: habakiri
 */
 
+/*==================================================
+ * slider文字の追加CSS
+ * また、デバイス幅400以下の場合は文字サイズを変更(少し小さく18pxに)
+ *================================================*/
 .habakiri-slider__item-content {
-    font-size: 40px;
+    font-size: 25px;
     font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN','メイリオ', 'Meiryo','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
     font-weight: bold;
     letter-spacing: 0.2em;
+    height: 100%;
 }
 
+@media screen and (max-width: 400px) {
+    .habakiri-slider__item-content {
+        font-size: 18px;
+    }
+}
 
+/*==================================================
+ * slider文字３つの個別CSS（テーマカスタマイザーで<p>タグを使用し、classを指定）
+ * また、文の後半を<span>タグでくくり、@mediaで小スクリーン時の改行を指定
+ *================================================*/
+.slider-message_1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slider-message_2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 63%;
+    text-align: right;
+}
+
+.slider-message_3 {
+    position: absolute;
+    left: 7%;
+    right: 0;
+    top: 73%;
+}
+
+@media screen and (max-width: 768px) {
+    .br::before {
+        content: "\A";
+        white-space: pre-wrap;
+    }
+}
+
+/*==================================================
+ * slider下部の説明文（固定ページ投稿で<h2>を使用し、追加CSSクラスを指定）
+ *================================================*/
 .site-description {
     font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN','メイリオ', 'Meiryo','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
-    font-size: 20px;
-    margin-left: 140px;
+    font-size: 18px;
+    text-align: center;
+    padding: 15px 10px 12px 10px;
 }
 
+.myname {
+    color: #109d49;
+    font-size: 19px;
+}
 
-.slider-message-1, .slider-message-2, .slider-message-3 {
+/*==================================================
+ * slider下部の3カラム（固定ページ投稿で3カラム部分にクラス名を追加し、CSS指定）
+ *================================================*/
+.pagelink-wrapper {
+    margin-bottom: 40px;
+}
+
+.pagelink {
+    padding: 20px 30px;
+    height: 150px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.pagelink > h3 {
+    margin-top: 0;
+    margin-bottom: 9px;
+    font-size: 20px;
+    color: #770f00;
+}
+
+.pagelink-left > p, .pagelink-right > p {
+    margin-bottom: 0;
+    font-size: 15px;
+    color: #424242;
+}
+
+.pagelink-center > p {
+    margin-bottom: 0;
+    font-size: 15px;
+    color: #323232;     /*真ん中のだけpの文字色を少し濃く*/
+}
+
+.pagelink-left, .pagelink-right {
+    background-color: rgba(223, 195, 6, 0.8);
+}
+
+.pagelink-center {
+    background-color: rgba(195, 164, 6, 0.8);
+}
+
+/*==================================================
+ * slider下部の3カラムのリンクボタン
+ *（固定ページ投稿で3カラム部分に<a>タグでリンクを追加）
+ *================================================*/
+
+.btn-wrapper {
+    position: absolute;
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.go-btn {
     display: inline-block;
-    padding: 0 30 0 30;
-    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+    line-height: 30px;
+    width: 70px;
+    height: 30px;
+    background-color: rgba(255, 246, 148, 0.52);
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.go-btn:hover {
+    text-decoration: none;
+    background-color: rgba(255, 246, 148, 0.87);
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+/*==================================================
+ * コピーライトの追加CSS
+ *================================================*/
+.copyright {
+    color: #eee;
+    text-align: center;
+}
+
+/*==================================================
+ * ページヘッダーの変更
+ *================================================*/
+/*
+背景画像のサイズ
+（オリジナルは上下160px　？）
+ */
+.page-header--has_background-image{
+    padding-top: 70px;
+    padding-bottom: 70px;
+    /* position: relative; */
+}
+
+/*
+.page-header--has_background-image ::before {
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+}
+*/
+
+/*
+ヘッダータイトルの色
+*/
+.page-header__title {
+    color: #fff;
+    letter-spacing: 0.2em;
 }
