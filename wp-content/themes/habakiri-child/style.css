@@ -166,7 +166,7 @@ Template: habakiri
 .page-header--has_background-image{
     padding-top: 70px;
     padding-bottom: 70px;
-    /* position: relative; */
+    position: relative;
 }
 
 /*

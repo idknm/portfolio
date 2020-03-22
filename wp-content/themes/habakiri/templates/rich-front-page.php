@@ -31,7 +31,7 @@
 				<!-- end .entry --></div>
 			</article>
 			<?php endwhile; ?>
-			
+
 		<!-- end #main --></main>
 	<!-- end .row --></div>
 <!-- end .container-fluid --></div>
