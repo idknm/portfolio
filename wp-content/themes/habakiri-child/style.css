@@ -188,3 +188,9 @@ Template: habakiri
     color: #fff;
     letter-spacing: 0.2em;
 }
+
+
+.wp-block-group__inner-container > h3 {
+    padding: 7px;
+    background-color: #eee;
+}
