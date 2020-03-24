@@ -159,14 +159,13 @@ Template: habakiri
 /*==================================================
  * ページヘッダーの変更
  *================================================*/
-/*
-背景画像のサイズ
-（オリジナルは上下160px　？）
- */
+/*  背景画像のサイズ（オリジナルは上下160px　？） */
 .page-header--has_background-image{
     padding-top: 70px;
     padding-bottom: 70px;
+    /*
     position: relative;
+     */
 }
 
 /*
@@ -181,16 +180,139 @@ Template: habakiri
 }
 */
 
-/*
-ヘッダータイトルの色
-*/
+/*  ヘッダータイトルの色 */
 .page-header__title {
     color: #fff;
     letter-spacing: 0.2em;
 }
 
-
+/*==================================================
+ * 作品集ページ
+ *================================================*/
+/* カテゴリータイトル */
 .wp-block-group__inner-container > h3 {
-    padding: 7px;
+    padding: 7px 10px;
+    color: #770f00;
+    letter-spacing: 0.1em;
+    background: linear-gradient(#e8d43c, rgba(232, 212, 60, 0.38));
+}
+/* カテゴリー説明 */
+.wp-block-group__inner-container > p {
+    color: #770f00;
+    font-style: italic;
+}
+
+/* 個別ページへのリンクボタン */
+.pt-cv-content > .btn-success {
+    background-color: #aa5a33;
+    border-color: #aa5a33;
+}
+/* ホバー時 */
+.pt-cv-content > .btn-success:hover, .pt-cv-content > .btn-success:active {
+    background-color: rgba(196, 102, 48, 0.9);
+    border-color: rgba(196, 102, 48, 0.9);
+}
+
+/*==================================================
+ * お問い合わせページ
+ *================================================*/
+.is-required {
+    color: #cc2919;
+    font-size: 0.8em;
+}
+
+.mw_wp_form a {
+    text-decoration-line: underline;
+    font-weight: bold;
+}
+
+.contact-form_wrapper {
+    padding: 0 50px;
+}
+
+.contact-message {
+    padding: 5px 15px 10px 15px;
     background-color: #eee;
+}
+
+:placeholder-shown {
+    color: rgba(34, 34, 34, 0.5);
+}
+
+input[type="text"], input[type="email"] {
+    font-size: 14px;
+    line-height: 1.8;
+    border: 2px solid rgba(34, 34, 34, 0.3);
+    padding: 7px 16px;
+    max-width: 100%;
+    width: 100%;
+    -webkit-transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s;
+    background-color: #fff;
+}
+
+textarea {
+    border: 2px solid rgba(34, 34, 34, 0.3);
+    font-size: 14px;
+    width: 100%;
+    -webkit-transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s;
+    background-color: #fff;
+    padding: 12px 16px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    outline: none;
+    border-color: rgba(209, 185, 6, 0.61);
+    box-shadow: inset 0 0 1px 2px rgba(209, 185, 6, 0.61);
+}
+
+input[type="radio"]:focus {
+    border-color: rgba(209, 185, 6, 0.61);
+}
+
+.c-button {
+    display: block;
+    background-color: #d1b906;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    width: 100%;
+    max-width: 344px;
+    text-align: center;
+    padding: 17px 32px 17px 16px;
+    margin: 3rem auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/*==================================================
+ * プライバシーポリシーページ
+ *================================================*/
+.privacy-policy_descripsion {
+    font-size: 17px;
+    color: #770f00;
+    background-color: #eee;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.chapter-title {
+    margin-top: 30px;
+}
+
+.chapter-Paragraph {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*==================================================
+ * 小デバイス時のパンくずリスト下部の余白を０に
+ *================================================*/
+@media screen and (max-width: 768px){
+    .breadcrumbs {
+        margin-bottom: 0;
+    }
 }

@@ -39,7 +39,7 @@
                                 <h3>こんな人</h3>
                                 <p>イダカナミの自己紹介ページ</p>
                                 <div class="btn-wrapper">
-                                    <a href="<?php echo get_page_link( 40 ); ?>" class="go-btn">Go!</a>
+                                    <a href="<?php echo get_page_link( 40 ); ?>" class="go-btn">Go &raquo</a>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                                 <h3>勉強のこと</h3>
                                 <p>いま勉強中のこと、<br>これから勉強予定のことについて</p>
                                 <div class="btn-wrapper">
-                                    <a href="<?php echo get_page_link( 42 ); ?>" class="go-btn">Go!</a>
+                                    <a href="<?php echo get_page_link( 42 ); ?>" class="go-btn">Go &raquo</a>
                                 </div>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                                 <h3>作品の紹介</h3>
                                 <p>今までに撮ったり、<br>描いたり、作ったもの</p>
                                 <div class="btn-wrapper">
-                                    <a href="<?php echo get_page_link( 51 ); ?>" class="go-btn">Go!</a>
+                                    <a href="<?php echo get_page_link( 51 ); ?>" class="go-btn">Go &raquo</a>
                                 </div>
                             </div>
                         </div>
