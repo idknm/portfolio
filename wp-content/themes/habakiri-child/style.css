@@ -22,7 +22,12 @@ Template: habakiri
     height: 100%;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 768px) {
+    .habakiri-slider__item-content {
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: 420px) {
     .habakiri-slider__item-content {
         font-size: 18px;
     }
@@ -72,9 +77,27 @@ Template: habakiri
     padding: 15px 10px 12px 10px;
 }
 
+
 .myname {
     color: #109d49;
     font-size: 19px;
+}
+
+@media screen and (max-width: 768px){
+    .site-description {
+        font-size: 16px;
+    }
+    .myname {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:420px){
+    .site-description {
+        font-size: 15px;
+    }
+    .myname {
+        font-size: 17px;
+    }
 }
 
 /*==================================================
@@ -111,11 +134,13 @@ Template: habakiri
 }
 
 .pagelink-left, .pagelink-right {
-    background-color: rgba(223, 195, 6, 0.8);
+    /*  background-color: rgba(223, 195, 6, 0.8); */
+    background: linear-gradient(to bottom,rgba(223, 195, 6, 0.8)30%, rgba(223, 195, 6, 0.5));
 }
 
 .pagelink-center {
-    background-color: rgba(195, 164, 6, 0.8);
+    /*  background-color: rgba(195, 164, 6, 0.8);   */
+    background: linear-gradient(to bottom,rgba(195, 164, 6, 0.8)30%,rgba(195, 164, 6, 0.5));
 }
 
 /*==================================================
@@ -203,14 +228,21 @@ Template: habakiri
 }
 
 /* 個別ページへのリンクボタン */
-.pt-cv-content > .btn-success {
+.pt-cv-content .btn-success,
+.pt-cv-content .btn-success:focus {
     background-color: #aa5a33;
     border-color: #aa5a33;
 }
 /* ホバー時 */
-.pt-cv-content > .btn-success:hover, .pt-cv-content > .btn-success:active {
-    background-color: rgba(196, 102, 48, 0.9);
-    border-color: rgba(196, 102, 48, 0.9);
+.pt-cv-content .btn-success:hover {
+    background-color: rgba(196, 102, 48, 0.9) !important;
+    border-color: rgba(196, 102, 48, 0.9) !important;
+}
+/* アクティブ時 */
+.pt-cv-content .btn-success:active {
+    background-color: rgba(196, 102, 48, 0.9) !important;
+    border-color: rgba(196, 102, 48, 0.9) !important;
+    font-weight: bold;
 }
 
 /*==================================================
@@ -232,7 +264,8 @@ Template: habakiri
 
 .contact-message {
     padding: 5px 15px 10px 15px;
-    background-color: #eee;
+    /*  background-color: #eee; */
+    background: linear-gradient(#e8d43c, rgba(232, 212, 60, 0.38));
 }
 
 :placeholder-shown {
@@ -264,7 +297,7 @@ textarea {
 input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     outline: none;
     border-color: rgba(209, 185, 6, 0.61);
-    box-shadow: inset 0 0 1px 2px rgba(209, 185, 6, 0.61);
+    box-shadow: inset 0 0 3px 2px rgba(209, 185, 6, 0.61);
 }
 
 input[type="radio"]:focus {
@@ -286,17 +319,43 @@ input[type="radio"]:focus {
     margin: 3rem auto;
     border-radius: 5px;
     overflow: hidden;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.4);
+}
+
+.c-button:active {
+    box-shadow: none;
+    outline: none;
+}
+
+.c-button:focus {
+    outline: none;
+}
+
+/*  お問い合わせ説明の「※注意書き」部分  */
+.contact-note {
+    font-size: 0.9em;
+}
+
+@media screen and (max-width: 768px){
+    .contact-note {
+        font-size: 0.8em;
+    }
 }
 
 /*==================================================
  * プライバシーポリシーページ
  *================================================*/
 .privacy-policy_descripsion {
-    font-size: 17px;
+    font-size: 15px;
     color: #770f00;
     background-color: #eee;
     padding: 10px 15px;
     text-align: center;
+}
+@media screen and (max-width: 768px){
+    .privacy-policy_descripsion {
+        font-size: 13.5px;
+    }
 }
 
 .chapter-title {
@@ -307,6 +366,192 @@ input[type="radio"]:focus {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+/*==================================================
+ * profileページ
+ *================================================*/
+/*  マイプロフィール部分  */
+.my-profile-img {
+    width: 200px;
+}
+
+.my-profile-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.my-profile-flex {
+    margin-left: 15px;
+}
+
+.my-profile-li {
+    margin: 5px 0px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN','メイリオ', 'Meiryo','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+}
+@media screen and (max-width: 420px){
+    .my-profile-wrapper {
+        justify-content: center;
+    }
+    .my-profile-flex {
+        margin: 0;
+        padding: 0;
+    }
+    .my-profile-li {
+        list-style: none;
+    }
+}
+
+/*  職種・趣味の3カラムリスト部分、点の非表示  */
+.job-content, .hobby-content {
+    list-style: none;
+}
+
+/*  職歴・趣味のタイトル部分のスタイル  */
+.job-experience-title, .hobby-title {
+    padding: 7px 10px;
+    color: #770f00;
+    letter-spacing: 0.1em;
+    background: linear-gradient(#e8d43c, rgba(232, 212, 60, 0.38));
+    margin-bottom: 15px;
+}
+
+/*  3カラム以外の部分の余白指定  */
+.my-profile-wrapper, .job-now-container {
+    padding: 5px 25px;
+}
+
+.my-profile-wrapper {
+    margin-bottom: 20px;
+}
+.job-experience-wrapper {
+    margin-bottom: 40px;
+}
+
+/*  3カラム部分の余白指定  */
+.job-experience-container,
+.hobby-container {
+    margin: 0;
+    padding: 5px 10px;
+}
+
+/*  3カラム部分はfloatしてるので、after擬似要素でクリアフィックス  */
+.job-experience-container::after,
+.hobby-container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/*  2019年より〜の部分  */
+.job-now {
+    font-size: 16px;
+    /*  color: rgba(135, 18, 0, 0.9);   */
+    color: #109d49;
+    font-style: italic;
+    background-color: rgba(232, 212, 60, 0.22);
+    padding: 3px 10px;
+    text-align: center;
+
+}
+.job-now-strong {
+    color: #109d49;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-decoration: underline;
+}
+
+.job-now-strong:hover,
+.job-now-strong:active,
+.job-now-strong:focus {
+    color: #13c15a;
+}
+
+@media screen and (max-width: 768px) {
+    .job-now, .job-now-strong {
+        font-size: 15px;
+    }
+}
+
+/*  経験職種のテキスト部分 */
+.job-p {
+    font-size: 15px;
+    font-style: italic;
+    letter-spacing: 0.05em;
+}
+
+/*  趣味のテキスト部分 */
+.hobby-p {
+    font-size: 17px;
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+/*==================================================
+ * 勉強ページ
+ *================================================*/
+/*  flex_親  */
+.study-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-evenly;
+    /* background-color: #eee;     仮 */
+}
+
+/*  flex_子  */
+.study-now, .study-future {
+    /* border: 2px solid #ddd;     仮 */
+    max-width: 450px;
+    min-width: 300px;
+    flex: 1 1 auto;
+}
+
+/*  flex_子の中  */
+.study-inner {
+    padding: 20px;
+}
+
+.study-inner ul {
+    padding: 0;
+}
+
+/*  タイトル  */
+.study-title {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background: linear-gradient(#e8d43c, rgba(232, 212, 60, 0.38));
+}
+
+.study-content {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    height: 140px;
+}
+
+.study-content figure {
+    width: 30%;
+    min-width: 100px;
+    flex: 0 0 auto;
+}
+.study-content p {
+    font-size: 13px;
+    width: 65%;
+    min-width: 240px;
+    flex: 0 1 auto;
+}
+
+
+
+
 
 /*==================================================
  * 小デバイス時のパンくずリスト下部の余白を０に
