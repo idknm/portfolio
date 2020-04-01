@@ -549,6 +549,8 @@ input[type="radio"]:focus {
     text-align: center;
     margin-top: 5px;
     margin-bottom: 5px;
+    color: #770f00;
+    letter-spacing: 0.1em;
     background: linear-gradient(#e8d43c, rgba(232, 212, 60, 0.38));
 }
 
