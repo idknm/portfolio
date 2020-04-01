@@ -537,7 +537,7 @@ input[type="radio"]:focus {
 
 /*  flex_子の中  */
 .study-inner {
-    padding: 20px;
+    padding: 20px 20px 0 20px;
 }
 
 .study-inner ul {
@@ -548,7 +548,7 @@ input[type="radio"]:focus {
 .study-title {
     text-align: center;
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     background: linear-gradient(#e8d43c, rgba(232, 212, 60, 0.38));
 }
 
@@ -557,6 +557,7 @@ input[type="radio"]:focus {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    align-items: center;
     padding-top: 20px;
     height: 140px;
 }
